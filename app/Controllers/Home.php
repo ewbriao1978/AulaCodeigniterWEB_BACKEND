@@ -27,7 +27,8 @@ class Home extends BaseController
         return view ('formulario');
     }
 
-    public function receiveData(){
+    public function receiveData() :string
+    {
         $data = array(
             'marca' => $this->request->getVar('marca'),
             'modelo' => $this->request->getVar('modelo'),
@@ -35,7 +36,9 @@ class Home extends BaseController
             'ano' => $this->request->getVar('ano'),
             'preco' => $this->request->getVar('preco')
         );
-        print_r($data);
+
+        return view ('apresenta_formulario',$data);
+        
     }
 
 
